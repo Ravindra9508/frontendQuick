@@ -25,7 +25,7 @@ const DashView = () => {
   // console.log(user)
 
 
-   
+
 
   return (
     selectedData && (
@@ -37,77 +37,51 @@ const DashView = () => {
 
             <>
               <div key={index} className="dashCardContainer">
-                <div className="dashCardHeading flex-sb">
+                <div className="dashCardHeading flex-sb ">
                   <div className="leftView">
-                    {groupvalue!=='user'? (
-                   
+                    {groupvalue !== 'user' ? (
 
 
-                   <>
-                   
-                      {groupvalue==='priority' ?
 
-                    <div
-                          className="imageContainer relative"
-                          style={{ width: "15px", height: "15px", display: 'inline-block' }}
-                           >
-                          {/* <img
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              borderRadius: "50%",
-                            }}
-                            src="https://media.phillyvoice.com/media/images/120522_Lensa_AI.887d0e07.fill-735x490.jpg"
-                            alt="UserImage"
-                          /> */}
-                          {/* <FcServiceMark /> */}
-                           <PriorityIconGenerator priority={elem[index]?.title} /> 
-                        
+                      <>
 
-                        </div>:
-                         <div
-                         className="imageContainer relative"
-                         style={{ width: "15px", height: "15px", display: 'inline-block' }}
+                        {groupvalue === 'priority' ?
+
+                          <div
+                            className="imageContainer relative"
+                            style={{ width: "15px", height: "15px", display: 'inline-block' }}
                           >
-                         {/* <img
-                           style={{
-                             width: "100%",
-                             height: "100%",
-                             borderRadius: "50%",
-                           }}
-                           src="https://media.phillyvoice.com/media/images/120522_Lensa_AI.887d0e07.fill-735x490.jpg"
-                           alt="UserImage"
-                         /> */}
-                         {/* <FcServiceMark /> */}
-                          <StatusIconGenerator status={elem[index]?.title} /> 
-                       
 
-                       </div>
-                    
-                    
-                    
-                    }
-                    </>
-                      
-                      
-                       ) : (
-                        <>
+                            <PriorityIconGenerator priority={elem[index]?.title} />
+
+
+                          </div> :
+                          <div
+                            className="imageContainer relative"
+                            style={{ width: "15px", height: "15px", display: 'inline-block' }}
+                          >
+
+                            <StatusIconGenerator status={elem[index]?.title} />
+
+
+                          </div>
+
+
+
+                        }
+                      </>
+
+
+                    ) : (
+                      <>
                         <div
                           className="imageContainer relative"
                           style={{ width: "15px", height: "15px", display: 'inline-block' }}
-                           >
-                          {/* <img
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              borderRadius: "50%",
-                            }}
-                            src="https://media.phillyvoice.com/media/images/120522_Lensa_AI.887d0e07.fill-735x490.jpg"
-                            alt="UserImage"
-                          /> */}
-                          {/* <FcServiceMark /> */}
-                           <UserIcon user={elem[index]?.title} /> 
-                        
+                        >
+
+
+                          <UserIcon user={elem[index]?.title} />
+
 
                         </div>
 
@@ -115,28 +89,24 @@ const DashView = () => {
                     )}
                     <span>
                       {" "}
-                      {elem[index]?.title} 
+                      {elem[index]?.title}
                     </span>
                   </div>
-                  {/* <div className="rightView">
-                    <AiOutlinePlus />{" "}
-                    <span style={{ letterSpacing: "2px" }}>...</span>
-                    
-                  </div> */}
+
                   <div class="rightView"><div class="icon-wrapper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ color: "gray" }}><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></div><div class="icon-wrapper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ color: "gray" }}><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></div></div>
                 </div>
                 <div className="dashList flex-gap-10">
                   {elem[index]?.value?.map((elem, ind) => {
                     return (
                       <Card
-                      id={elem.id}
-                      title={elem.title}
-                      tag={elem.tag}
-                      user={elem[index]?.value}
-                      status={elem.status}
-                    />
+                        id={elem.id}
+                        title={elem.title}
+                        tag={elem.tag}
+                        user={elem[index]?.value}
+                        status={elem.status}
+                      />
                     );
-            
+
                   })}
                 </div>
               </div>
@@ -152,7 +122,7 @@ const DashView = () => {
                 <div class="rightView"><div class="icon-wrapper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ color: "gray" }}><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></div><div class="icon-wrapper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ color: "gray" }}><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></div></div>
               </div>
               <div className="dashList flex-gap-10">
-                .
+
               </div>
             </div>
             <div className="dashCardContainer">
@@ -161,7 +131,7 @@ const DashView = () => {
                 <div class="rightView"><div class="icon-wrapper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ color: "gray" }}><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></div><div class="icon-wrapper"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{ color: "gray" }}><path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></div></div>
               </div>
               <div className="dashList flex-gap-10">
-                .
+
               </div>
             </div>
 
@@ -184,108 +154,6 @@ const DashView = () => {
 };
 
 export default DashView;
-
-
-
-
-
-// import React from "react";
-// import { useSelector } from "react-redux";
-// import { AiOutlinePlus } from "react-icons/ai";
-// import { FiAlertCircle } from 'react-icons/fi';
-// import "./DashView.css";
-// import Card from "../Card/Card";
-// import PriorityGenerator from "../Header/Header"; // Import the PriorityGenerator component
-
-// const DashView = () => {
-//     const { selectedData, user } = useSelector(
-//         (state) => state.SelectDataReducer
-//     );
-//     const groupvalue = localStorage.getItem("group");
-//     const grouppriority = localStorage.getItem("order");
-//     console.log(grouppriority);
-
-//     if (!selectedData) {
-//         // Handle the case when selectedData is undefined
-//         return <div>Loading...</div>; // You can replace this with your desired UI
-//     }
-
-//     return (
-//         <div className="dashContainer" style={{ justifyContent: "space-evenly" }}>
-//             {selectedData.map((elem, index) => (
-//                 <div key={index} className="dashCardContainer">
-//                     <div className="dashCardHeading flex-sb">
-//                         <div className="leftView">
-//                             {/* Pass the necessary props to PriorityGenerator */}
-//                             <PriorityGenerator
-//                                 displayState={groupvalue} // Use 'groupvalue' as 'displayState'
-//                                 priority={grouppriority} // Use 'grouppriority' as 'priority'
-//                                 status={groupvalue}
-//                                 users={user}
-//                                 tickets={elem[index]?.value}
-//                             />
-//                         </div>
-//                         <div className="rightView">
-//                             <AiOutlinePlus />{" "}
-//                             <span style={{ letterSpacing: "2px" }}>...</span>
-//                         </div>
-//                     </div>
-//                     <div className="dashList flex-gap-10">
-//                         {elem[index]?.value?.map((elem, ind) => (
-//                             <Card id={elem.id} title={elem.title} tag={elem.tag} />
-//                         ))}
-//                     </div>
-//                 </div>
-//             ))}
-//             {groupvalue === 'status' ? (
-//                 <>
-//                     <div className="dashCardContainer">
-//                         <div className="dashCardHeading flex-sb">
-//                             <div className="leftView">
-//                                 {/* Pass the necessary props to PriorityGenerator */}
-//                                 <PriorityGenerator
-//                                     displayState={groupvalue}
-//                                     priority={grouppriority}
-//                                     status={groupvalue}
-//                                     users={user}
-//                                     tickets={null}
-//                                 />
-//                                 <span>{" ...second"}</span>
-//                             </div>
-//                             <div className="rightView">
-//                                 <AiOutlinePlus />{" "}
-//                                 <span style={{ letterSpacing: "2px" }}>...</span>
-//                             </div>
-//                         </div>
-//                         <div className="dashList flex-gap-10">... done</div>
-//                     </div>
-//                     <div className="dashCardContainer">
-//                         <div className="dashCardHeading flex-sb">
-//                             <div className="leftView">
-//                                 {/* Pass the necessary props to PriorityGenerator */}
-//                                 <PriorityGenerator
-//                                     displayState={groupvalue}
-//                                     priority={grouppriority}
-//                                     status={groupvalue}
-//                                     users={user}
-//                                     tickets={null}
-//                                 />
-//                                 <span>{" ..second2"}</span>
-//                             </div>
-//                             <div className="rightView">
-//                                 <AiOutlinePlus />{" "}
-//                                 <span style={{ letterSpacing: "2px" }}>...</span>
-//                             </div>
-//                         </div>
-//                         <div className="dashList flex-gap-10">..done2</div>
-//                     </div>
-//                 </>
-//             ) : null}
-//         </div>
-//     );
-// };
-
-// export default DashView;
 
 
 
