@@ -1,101 +1,98 @@
+
 import React, { useEffect, useState } from "react";
 import { TiThList } from "react-icons/ti";
 import { FiChevronDown } from 'react-icons/fi';
-import {BsSliders2  } from 'react-icons/bs';
-import {settings} from 'react-icons-kit/oct/settings'
+import { BsSliders2 } from 'react-icons/bs';
+import { BiSolidMoon, BiMoon } from 'react-icons/bi';
+
 import "./Nav.css";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectData } from "../../Actions/DataAction";
 
 const getGroup = () => {
-  // console.log(localStorage.getItem("group"));
-
-  if(localStorage.getItem("group")){
+  if (localStorage.getItem("group")) {
     return localStorage.getItem("group");
-  }else{
+  } else {
     return "status";
   }
-}
+};
 
 const getOrder = () => {
-  if(localStorage.getItem("order")){
+  if (localStorage.getItem("order")) {
     return localStorage.getItem("order");
-  }else{
+  } else {
     return "priority";
   }
-}
+};
+
 const TopNav = () => {
   const [displayOnClick, setDisplayOnClick] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // Add dark mode state
   const dispatch = useDispatch();
-  const {allTickets, allUser} = useSelector(state => state.DataReducer);
+  const { allTickets, allUser } = useSelector(state => state.DataReducer);
   const [groupValue, setGroupValue] = useState(getGroup());
   const [orderValue, setOrderValue] = useState(getOrder());
 
   const handleGroupValue = (e, valueBool) => {
-    if(valueBool){
+    if (valueBool) {
       setGroupValue(e.target.value);
       setDisplayOnClick(!displayOnClick);
       localStorage.setItem("group", e.target.value);
-    }else{
+    } else {
       setOrderValue(e.target.value);
-    setDisplayOnClick(!displayOnClick);
-    localStorage.setItem("order", e.target.value);
+      setDisplayOnClick(!displayOnClick);
+      localStorage.setItem("order", e.target.value);
     }
-  }
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   useEffect(() => {
-    if(groupValue === 'user'){
+    if (groupValue === 'user') {
       dispatch(selectData(groupValue, {
-        allTickets, allUser
-      }, orderValue))
-    }else{
+        allTickets,
+        allUser
+      }, orderValue));
+    } else {
       dispatch(selectData(groupValue, allTickets, orderValue));
     }
   }, [allTickets, dispatch, groupValue, allUser, orderValue]);
- 
-  
+
   return (
-    <div className="top-header" style={{paddingLeft : "10px"}}>
+    <div className={`top-header ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="displayButton">
         <button
-          className="p-10 f-16 btn"
+          className={`p-10 f-16 btn ${isDarkMode ? 'dark-button' : 'light-button'}`}
           onClick={() => setDisplayOnClick(!displayOnClick)}
         >
           {" "}
-          <BsSliders2/>
-         Display
-      <span className="
-      drop-down"><FiChevronDown /> 
-    
-      </span>
-   
+          <BsSliders2 />
+          Display
+          <span className="drop-down"><FiChevronDown /></span>
         </button>
         {displayOnClick && (
-          <>
-            <div className="dropOnClick flex-gap-10 p-10">
-              <div className="selectGroup flex-sb">
-                <span>Grouping</span>
-                <select value={groupValue} onChange={(e) => handleGroupValue(e, true)} className="selectStyle" name="group" id="group">
-                  <option value="status">Status</option>
-                  <option value="user">User</option>
-                  <option value="priority">Priority</option>
-                </select>
-              </div>
-              <div className="selectGroup flex-sb">
-                <span>Ordering</span>
-                <select value={orderValue} onChange={(e) => handleGroupValue(e, false)} className="selectStyle" name="order" id="order">
-                  <option value="priority">Priority</option>
-                  <option value="title">Title</option>
-                </select>
-              </div>
+          <div className="dropOnClick flex-gap-10 p-10">
+            <div className="selectGroup flex-sb">
+              <span>Grouping</span>
+              <select value={groupValue} onChange={(e) => handleGroupValue(e, true)} className="selectStyle" name="group" id="group">
+                <option value="status">Status</option>
+                <option value="user">User</option>
+                <option value="priority">Priority</option>
+              </select>
             </div>
-          </>
+            <div className="selectGroup flex-sb">
+              <span>Ordering</span>
+              <select value={orderValue} onChange={(e) => handleGroupValue(e, false)} className="selectStyle" name="order" id="order">
+                <option value="priority">Priority</option>
+                <option value="title">Title</option>
+              </select>
+            </div>
+          </div>
         )}
-        <div>
-
-        </div>
       </div>
-     
+      
     </div>
   );
 };
