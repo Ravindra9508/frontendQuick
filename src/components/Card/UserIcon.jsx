@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const UserIcon1 = ({ userId }) => {
+const UserIcon = ({ userId }) => {
   const userMappings = {
     'CAM-1': { icon: 'Y', backgroundColor: 'brown' },
     'CAM-2': { icon: 'R', backgroundColor: 'green' },
@@ -59,7 +59,7 @@ const UserIcon1 = ({ userId }) => {
   );
 };
 
-export default UserIcon1;
+export default UserIcon;
 
 
 
