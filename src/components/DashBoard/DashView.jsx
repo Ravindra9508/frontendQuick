@@ -43,7 +43,7 @@ const DashView = () => {
 
 
 
-                      <>
+                      <div>
 
                         {groupvalue === 'priority' ?
 
@@ -69,11 +69,11 @@ const DashView = () => {
 
 
                         }
-                      </>
+                      </div>
 
 
                     ) : (
-                      <>
+                      <div >
                         <div
                           className="imageContainer relative"
                           style={{ width: "15px", height: "15px", display: 'inline-block' }}
@@ -85,7 +85,7 @@ const DashView = () => {
 
                         </div>
 
-                      </>
+                      </div>
                     )}
                     <span>
                       {" "}
@@ -104,6 +104,7 @@ const DashView = () => {
                         tag={elem.tag}
                         user={elem[index]?.value}
                         status={elem.status}
+                        priority={elem[index]?.title}
                       />
                     );
 
