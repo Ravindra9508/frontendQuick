@@ -1,16 +1,13 @@
-import React from 'react'
+import React from 'react';
 import './Card.css';
 import { FaTimes, FaUserCircle } from 'react-icons/fa';
 import { FcRegisteredTrademark, FcBusinessman } from "react-icons/fc";
 import StatusIconGenerator from '../Header/StatusIconGenerator';
-import UserIcon from './UserIcon';
+import UserIcon from './UserIcon1';
 
 const users = [
     'Anoop Sharma',
-
 ];
-
-
 
 const Card = ({ id, title, tag, user, status }) => {
     console.log(user);
@@ -18,33 +15,30 @@ const Card = ({ id, title, tag, user, status }) => {
         <div className="cardContainer flex-gap-10" style={{ gap: '5px' }}>
             <div className="cardHeading flex-sb ">
                 <span style={{ textTransform: "uppercase" }} className='color-grey'>{id}</span>
-                <div className="imageContainer relative" style={{ width: "30px", height: "30px" }}>
-
-                    {/* <img style={{width : "100%", height : "100%",  borderRadius : "50%" }}  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHLhAXbyvfG8mvwGRX_LcasbTqom1S5nVykQ&usqp=CAU" alt="UserImage" /> */}
-                    {/* <FcBusinessman style={{width : "100%", height : "100%",  borderRadius : "50%" }}/> */}
-
-                    <div style={{ width: "100%", height: "100%", borderRadius: "90%" }} >
-
-
-                        <UserIcon userId={id} />
-                        
-
-
-
-
+                <div className="imageContainer relative" style={{ width: "29px", height: "22px" }}>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <div
+                            style={{
+                                width: "30px", // Adjust the width as needed
+                                height: "30px", // Adjust the height as needed
+                                borderRadius: "50%",
+                                display: "flex",
+                                alignItems: "center", // Vertically center the content
+                                justifyContent: "center", // Horizontally center the content
+                            }}
+                        >
+                            <UserIcon userId={id} />
+                            <div className="showStatus"></div> {/* Move this inside the user icon container */}
+                        </div>
                     </div>
-
-                    <div className="showStatus"> </div>
                 </div>
-            </div><div className='status_align'>
-            <StatusIconGenerator status={status} /> 
-            <div className="cardTitle" style={{ fontWeight: 200 }} >
-           
-           <p>{title}</p>
-       </div>
-
             </div>
-          
+            <div className='status_align'>
+                <StatusIconGenerator status={status} />
+                <div className="cardTitle" style={{ fontWeight: 150 }}>
+                    <p>{title}</p>
+                </div>
+            </div>
             <div className="cardTags">
                 <div className="tags color-grey"> ... </div>
                 {
@@ -54,7 +48,7 @@ const Card = ({ id, title, tag, user, status }) => {
                 }
             </div>
         </div>
-    )
+    );
 }
 
 export default Card;
