@@ -23,12 +23,13 @@
   
   .showStatus {
     position: absolute;
-    right: 0;
+    right: 4px;
     bottom: 0;
     width: 6px;
     height: 6px;
     background: silver;
-    border-radius: 100%;
+   border:2px solid white;
+   border-radius: 50%;
   }
   .cardTitle{
     padding: 4%;
@@ -75,3 +76,4 @@
       display: none; 
     }
   }
+  
