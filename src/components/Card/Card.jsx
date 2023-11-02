@@ -27,7 +27,7 @@ const Card = ({ id, title, tag, user, status }) => {
 
 
                         <UserIcon userId={id} />
-                        {id =='CAM-1' &&   <UserIcon user={Anoop sharma} /> }
+                        
 
 
 
