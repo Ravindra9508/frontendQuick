@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './App.css';
-import TopNav from './components/TopNav/TopNav';
+import Nav from './components/Nav/Nav';
 
 import DashView from './components/DashBoard/DashView';
 import { useDispatch, useSelector} from 'react-redux'
@@ -18,7 +18,7 @@ const App = () => {
   return allTickets ? (
     <div style={{paddingTop : "10px"}} >
      <div >
-     <TopNav/>
+     <Nav/>
       {/* <hr style={{marginTop : "10px"}} /> */}
      
 

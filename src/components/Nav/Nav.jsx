@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { TiThList } from "react-icons/ti";
 import { FiChevronDown } from 'react-icons/fi';
-import "./TopNav.css";
+import {BsSliders2  } from 'react-icons/bs';
+import {settings} from 'react-icons-kit/oct/settings'
+import "./Nav.css";
 import { useDispatch, useSelector} from "react-redux";
 import { selectData } from "../../Actions/DataAction";
 
@@ -60,11 +62,12 @@ const TopNav = () => {
           onClick={() => setDisplayOnClick(!displayOnClick)}
         >
           {" "}
-          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="icon" 
-          height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2h-1v5h1V2zm6.1 5H6.4L6 6.45v-1L6.4 5h3.2l.4.5v1l-.4.5zm-5 3H1.4L1 9.5v-1l.4-.5h3.2l.4.5v1l-.4.5zm3.9-8h-1v2h1V2zm-1 6h1v6h-1V8zm-4 3h-1v3h1v-3zm7.9 0h3.19l.4-.5v-.95l-.4-.5H11.4l-.4.5v.95l.4.5zm2.1-9h-1v6h1V2zm-1 10h1v2h-1v-2z"></path></svg> Display
-       
+          <BsSliders2/>
+         Display
       <span className="
-      drop-down"><FiChevronDown /></span>
+      drop-down"><FiChevronDown /> 
+    
+      </span>
    
         </button>
         {displayOnClick && (

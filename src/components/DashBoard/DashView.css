@@ -1,17 +1,24 @@
 .dashContainer{
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    min-height: 100vh;
+  grid-template-columns: repeat(5,1fr);
     background-color: #F4F5F8;
     padding: 5px 10px;
 }
 
 .dashCardContainer{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    
+  
     flex-direction: column;
     gap: 5px;
     width : 300px;
+}
+.rightView{
+    display: flex;
+    flex-direction: row;
+}
+.leftView{
+    display: flex;
+    flex-direction: row;
 }
