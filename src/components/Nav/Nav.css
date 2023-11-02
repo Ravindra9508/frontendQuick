@@ -5,6 +5,8 @@
 
 .displayButton{
     position: relative;
+    /* Vertically align the icon and text */
+ 
  
 }
 
@@ -12,7 +14,7 @@
     position: absolute;
     width: 250px;
     background-color: #f8f8fa;
-    border-radius: 10px;
+    border-radius: 1px;
     margin-top: 10px;
     z-index: 10;
 }
@@ -33,7 +35,20 @@
     background:  #f8f8fa;;
     border: 1px solid silver;
     border-radius: 10px;
+    display: flex;
+    gap:10px;
+    align-items: center;
 }
+.top-header {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row; 
+    gap: 90%;/* Add this property to create a gap between top-header and DashView */
+  }
+  
+  /* Rest of your CSS styles */
+  
 
 .selectStyle{
     width: 100px;
