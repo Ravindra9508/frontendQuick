@@ -1,38 +1,63 @@
+
+.Nav {
+  margin-bottom: 20px;
+}
+
+/* Your existing styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-.p-10{
-  padding: 5px 10px;
+/* For small screens, like mobile devices */
+@media (max-width: 768px) {
+  .p-10 {
+    padding: 5px;
+  }
+  .flex-gap-10 {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
-.f-16{
+/* For medium-sized screens, like tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .p-10 {
+    padding: 10px;
+  }
+  .flex-gap-10 {
+    gap: 10px;
+  }
+}
+
+/* For larger screens, like desktops */
+@media (min-width: 1025px) {
+  .p-10 {
+    padding: 10px;
+  }
+  .flex-gap-10 {
+    gap: 20px;
+  }
+}
+
+.f-16 {
   font-size: 16px;
 }
 
-.color-grey{
+.color-grey {
   color: gray;
 }
 
-.flex-sb{
+.flex-sb {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.flex-gap-10{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.relative{
+.relative {
   position: relative;
 }
