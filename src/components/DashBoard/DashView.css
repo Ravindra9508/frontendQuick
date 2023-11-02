@@ -1,24 +1,61 @@
-.dashContainer{
+
+.dashContainer {
     display: grid;
     min-height: 100vh;
-  grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     background-color: #F4F5F8;
     padding: 5px 10px;
-}
-
-.dashCardContainer{
-    display: flex;
-    
+    gap: 10px; /* Add gap between grid items */
+  }
   
+  .dashCardContainer {
+    display: flex;
     flex-direction: column;
     gap: 5px;
-    width : 300px;
-}
-.rightView{
+    width: 300px;
+    padding: 10px; 
+  }
+  
+  .leftView,
+  .rightView {
     display: flex;
     flex-direction: row;
-}
-.leftView{
+    align-items: center; 
+    gap: 5px; 
+  }
+  
+  .dashCardHeading .icon-wrapper {
     display: flex;
-    flex-direction: row;
-}
+    align-items: center;
+    gap: 5px; 
+  }
+  
+  .dashList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+  }
+  
+  .dashCardHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .dashContainer {
+      grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for smaller screens */
+    }
+  
+    .dashCardContainer {
+      width: 100%; /* Take up the full width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .dashContainer {
+      grid-template-columns: repeat(1, 1fr); /* Stack columns on the smallest screens */
+    }
+  }
+  
