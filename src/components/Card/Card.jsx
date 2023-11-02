@@ -3,7 +3,7 @@ import './Card.css';
 import { FaTimes, FaUserCircle } from 'react-icons/fa';
 import { FcRegisteredTrademark, FcBusinessman } from "react-icons/fc";
 import StatusIconGenerator from '../Header/StatusIconGenerator';
-import UserIcon from './UserIcon1';
+import UserIcon from './UserIcon';
 
 const users = [
     'Anoop Sharma',
