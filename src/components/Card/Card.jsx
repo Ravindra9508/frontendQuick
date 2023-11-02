@@ -4,7 +4,7 @@ import { FaTimes, FaUserCircle } from 'react-icons/fa';
 import { FcRegisteredTrademark, FcBusinessman } from "react-icons/fc";
 import StatusIconGenerator from '../Header/StatusIconGenerator';
 import PriorityIconGenerator from '../Header/PriorityIconGenerator';
-import UserIcon from './UserIcon1';
+import UserIcon from './UserIcon';
 
 
 
