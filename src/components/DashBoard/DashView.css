@@ -21,6 +21,7 @@
     display: flex;
     flex-direction: row;
     align-items: center; 
+    
     gap: 5px; 
   }
   
@@ -58,4 +59,3 @@
       grid-template-columns: repeat(1, 1fr); /* Stack columns on the smallest screens */
     }
   }
-  
